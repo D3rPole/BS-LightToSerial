@@ -24,3 +24,6 @@ Eachtime a beatmap starts it also sends out the colors used for the map. It does
 C1 or C2(like Left saber/Right saber)/R/G/B       -R,G,B are all integers from 0-255
 
 a valid example would be   "C1/255/0/0"           -which would be Red for the first color.
+
+
+In the ingame options you can set wich COM port and baudrate it should use.
