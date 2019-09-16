@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\LightOut"
   ],
+  "SelectedNode": "\\LightOut\\EventListener.cs",
   "PreviewInSolutionExplorer": false
 }
