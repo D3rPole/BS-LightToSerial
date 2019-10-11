@@ -54,10 +54,10 @@ namespace LightOut
 
             BPM = (int)BMD.beatsPerMinute;
 
-            port.Write(new byte[]{(byte)0, (byte)(C1.r * 255), (byte)(C1.g * 255), (byte)(C1.b * 255)});
-            port.Write(new byte[]{(byte)1, (byte)(C2.r * 255), (byte)(C2.g * 255), (byte)(C2.b * 255)});
+            port.Write(new byte[]{(byte)0, (byte)(C1.r * 255), (byte)(C1.g * 255), (byte)(C1.b * 255)},0,4);
+            port.Write(new byte[]{(byte)1, (byte)(C2.r * 255), (byte)(C2.g * 255), (byte)(C2.b * 255)},0,4);
 
-            port.Write(new byte[]{(byte)2, (byte)BPM, (byte)0, (byte)0});
+            port.Write(new byte[]{(byte)2, (byte)BPM, (byte)0, (byte)0},0,4);
 
             Debug.Log("C1/" + (int)(C1.r * 255) + "/" + (int)(C1.g * 255) + "/" + (int)(C1.b * 255));
             Debug.Log("C2/" + (int)(C2.r * 255) + "/" + (int)(C2.g * 255) + "/" + (int)(C2.b * 255));
@@ -70,7 +70,7 @@ namespace LightOut
 
         void EventHappened(BeatmapEventData Data)
         {
-            port.Write(new byte[]{(byte)3, byte.Parse(Data.type.ToString().Replace("Event","")), (byte)Data.value, (byte)0});
+            port.Write(new byte[]{(byte)3, byte.Parse(Data.type.ToString().Replace("Event","")), (byte)Data.value, (byte)0},0,4);
             
             //Debug.Log(Data.type.ToString().Replace("Event", "") + "/" + Data.value);
         }
