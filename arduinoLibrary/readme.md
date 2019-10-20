@@ -71,19 +71,27 @@ A struct containing the values of a light event
 The type of light event. According to the original author, these are the corresponding lights:
 
 Type 0-4 are the 5 main lights.
+
 0 = no light (turn completely off)
+
 1 = blue light on
+
 2 = blue light flash
+
 3 = blue light fade out
+
 4 = none
+
 5 = red light on
+
 6 = red light flash
+
 7 = red light fade out
 
 Type 12 and 13 are the speed of the left/right laser (Type 2 and 3) and the event value controls the speed.
 
     int BS_LightEvent.value
 
-The value of the event (corresponds to different things depending on the event type, for example, brightness or rotation speed)
+The value of the event. Corresponds to different things depending on the event type, for example, brightness or rotation speed.
 
 **IMPORTANT!** `type` equals 255 if the given event was not a lighting event (or if something else went wrong). Make sure to add a check if `event.type == 255` to make sure you are only using good values!
