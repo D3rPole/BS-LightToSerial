@@ -6,10 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using System.Collections;
+using Chroma.Beatmap.Events;
+using Chroma.Settings;
 
 namespace LightOut
 {
-    class EventListener : MonoBehaviour
+    class EventListenerChroma : MonoBehaviour
     {
         private SerialPort port;
         private BeatmapObjectCallbackController Ec;
@@ -59,10 +61,10 @@ namespace LightOut
 
             BPM = (int)BMD.beatsPerMinute;
 
-            port.Write(new byte[]{(byte)0, (byte)(C1.r * 255), (byte)(C1.g * 255), (byte)(C1.b * 255)},0,4);
-            port.Write(new byte[]{(byte)1, (byte)(C2.r * 255), (byte)(C2.g * 255), (byte)(C2.b * 255)},0,4);
+            port.Write(new byte[] { (byte)0, (byte)(C1.r * 255), (byte)(C1.g * 255), (byte)(C1.b * 255) }, 0, 4);
+            port.Write(new byte[] { (byte)1, (byte)(C2.r * 255), (byte)(C2.g * 255), (byte)(C2.b * 255) }, 0, 4);
 
-            port.Write(new byte[]{(byte)2, (byte)BPM, (byte)0, (byte)0},0,4);
+            port.Write(new byte[] { (byte)2, (byte)BPM, (byte)0, (byte)0 }, 0, 4);
 
             Debug.Log("C1/" + (int)(C1.r * 255) + "/" + (int)(C1.g * 255) + "/" + (int)(C1.b * 255));
             Debug.Log("C2/" + (int)(C2.r * 255) + "/" + (int)(C2.g * 255) + "/" + (int)(C2.b * 255));
@@ -76,8 +78,19 @@ namespace LightOut
 
         void EventHappened(BeatmapEventData Data)
         {
-            port.Write(new byte[]{(byte)3, byte.Parse(Data.type.ToString().Replace("Event","")), (byte)Data.value, (byte)0},0,4);
-            
+            int Event;
+            Int32.TryParse(Data.type.ToString().Replace("Event", ""), out Event);
+            ChromaEvent ChroEvent = Chroma.Beatmap.Events.ChromaEvent.GetChromaEvent(Data);
+            if (ChroEvent == null)
+            {
+                port.Write(new byte[] { (byte)3, (byte)Event, (byte)Data.value, (byte)0 }, 0, 4);
+            }
+            else if(Chroma.Settings.ChromaConfig.CustomColourEventsEnabled)
+            {
+                Color C = Chroma.ColourManager.ColourFromInt(Data.value);
+                //Debug.Log((4 + Event) + "    " + (int)(C.r * 255) + "    " + (int)(C.g * 255) + "    " + (int)(C.b * 255));
+                port.Write(new byte[] { (byte)(4 + Event), (byte)(C.r * 255), (byte)(C.g * 255), (byte)(C.b * 255) }, 0, 4);
+            }
             //Debug.Log(Data.type.ToString().Replace("Event", "") + "/" + Data.value);
         }
     }

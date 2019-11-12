@@ -21,11 +21,22 @@ namespace LightOut
                 config.SetBool("LightSerialOutput", "Enabled", value);
             }
         }
+        public static bool chroma
+        {
+            get
+            {
+                return config.GetBool("LightSerialOutput", "Chroma", true, true);
+            }
+            set
+            {
+                config.SetBool("LightSerialOutput", "Chroma", value);
+            }
+        }
         public static int comPort
         {
             get
             {
-                return config.GetInt("LightSerialOutput", "ComPort", 3, true);
+                return config.GetInt("LightSerialOutput", "ComPort", 4, true);
             }
             set
             {
@@ -36,7 +47,7 @@ namespace LightOut
         {
             get
             {
-                return config.GetInt("LightSerialOutput", "BaudRate", 250000, true);
+                return config.GetInt("LightSerialOutput", "BaudRate", 9600, true);
             }
             set
             {

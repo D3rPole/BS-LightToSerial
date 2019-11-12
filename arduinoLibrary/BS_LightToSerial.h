@@ -31,6 +31,14 @@ public:
   BS_LightEvent ParseMessage(byte[]);
   color left;
   color right;
+
+  color light0;
+  color light1;
+  color light2;
+  color light3;
+  color light4;
+
+  bool chroma;
   byte bpm;
   enum LightEvents
   {

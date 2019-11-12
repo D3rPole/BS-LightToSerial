@@ -31,7 +31,11 @@ namespace LightOut.UI
             //Fetch your initial value for the option from within the braces, or simply have it default to a value
             enabled.GetValue += delegate { return Config.enabled;  };
             enabled.SetValue += delegate (bool value) { Config.enabled = value; };
-      
+
+            var chroma = pluginSettingsSubmenu.AddBool("Chroma support (not Chromalite)");
+            chroma.GetValue += delegate { return Config.chroma; };
+            chroma.SetValue += delegate (bool value) { Config.chroma = value; };
+
 
             var ComPort = pluginSettingsSubmenu.AddInt("Com port", 1, 256, 1);
             ComPort.GetValue += delegate { return Config.comPort; };

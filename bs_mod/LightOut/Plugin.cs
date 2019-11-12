@@ -7,15 +7,14 @@ using System.Media;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using IllusionPlugin;
+using IPA.Loader;
 
 namespace LightOut
 {
     public class Plugin : IPlugin
     {
         public string Name => "LightSerialOutput";
-        public string Version => "1.0";
-
-        bool doesPluginExist;
+        public string Version => "1.4.0";
 
         public void OnApplicationStart()
         {
@@ -23,10 +22,6 @@ namespace LightOut
             SceneManager.sceneLoaded += SceneManager_sceneLoaded;
 
             //Checks if a IPlugin with the name in quotes exists, in case you want to verify a plugin exists before trying to reference it, or change how you do things based on if a plugin is present
-            doesPluginExist = IllusionInjector.PluginManager.Plugins.Any(x => x.Name == "Saber Mod");
-
-            new GameObject("EventListener").AddComponent<EventListener>();
-
 
         }
 
@@ -36,7 +31,7 @@ namespace LightOut
             if (newScene.name == "MenuCore")
             {
                 //Code to execute when entering The Menu
-                if(oldScene.name == "GameCore")
+                if (oldScene.name == "GameCore")
                 {
 
                 }
@@ -45,8 +40,22 @@ namespace LightOut
 
             if (newScene.name == "GameCore" && Config.enabled)
             {
-                
-                new GameObject("EventListener").AddComponent<EventListener>();
+                bool chroma = false;
+
+                if (Config.chroma)
+                {
+                    chroma = IPA.Loader.PluginManager.GetPlugin("Chroma") != null;
+                }
+
+                Debug.Log("Chroma: " + chroma);
+
+                if (chroma) {
+                    new GameObject("EventListener").AddComponent<EventListenerChroma>();
+                }
+                else
+                {
+                    new GameObject("EventListener").AddComponent<EventListener>();
+                }
             }
 
 
