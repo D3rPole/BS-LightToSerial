@@ -12,7 +12,7 @@ namespace LightOut
     public class Plugin : IPlugin
     {
         public string Name => "LightSerialOutput";
-        public string Version => "1.4.0";
+        public string Version => "1.4.1";
 
         public void OnApplicationStart()
         {

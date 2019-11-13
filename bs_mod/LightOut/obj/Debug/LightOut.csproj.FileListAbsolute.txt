@@ -285,3 +285,4 @@ C:\Users\DerPole\Source\Repos\D3rPole\BS-Lightoutput\bs_mod\LightOut\obj\Debug\N
 C:\Users\DerPole\Source\Repos\D3rPole\BS-Lightoutput\bs_mod\LightOut\obj\Debug\NewPlugin.pdb
 C:\Users\DerPole\Source\Repos\D3rPole\BS-Lightoutput\bs_mod\LightOut\bin\Debug\Chroma.dll
 C:\Users\DerPole\Source\Repos\D3rPole\BS-Lightoutput\bs_mod\LightOut\bin\Debug\CustomJSONData.dll
+C:\Users\DerPole\Source\Repos\D3rPole\BS-Lightoutput\bs_mod\LightOut\obj\Debug\LightOut.csprojAssemblyReference.cache

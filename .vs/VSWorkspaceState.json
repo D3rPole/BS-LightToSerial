@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\bs_mod"
+    "\\arduinoLibrary",
+    "\\bs_mod",
+    "\\bs_mod\\LightOut"
   ],
   "SelectedNode": "\\bs_mod\\LightOut.sln",
   "PreviewInSolutionExplorer": false
