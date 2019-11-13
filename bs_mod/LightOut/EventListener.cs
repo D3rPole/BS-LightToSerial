@@ -27,6 +27,15 @@ namespace LightOut
             StartCoroutine(GrabLight());
         }
 
+        public static Color ColourFromInt(int rgb)
+        {
+            rgb = rgb - 2000000000;
+            int red = (rgb >> 16) & 0x0ff;
+            int green = (rgb >> 8) & 0x0ff;
+            int blue = (rgb) & 0x0ff;
+            return new Color(red / 255f, green / 255f, blue / 255f, 1);
+        }
+
         IEnumerator GrabLight()
         {
             yield return new WaitUntil(() => Resources.FindObjectsOfTypeAll<BeatmapObjectCallbackController>().Any());
@@ -76,8 +85,19 @@ namespace LightOut
 
         void EventHappened(BeatmapEventData Data)
         {
-            port.Write(new byte[]{(byte)3, byte.Parse(Data.type.ToString().Replace("Event","")), (byte)Data.value, (byte)0},0,4);
-            
+            int Event;
+            int value = Data.value;
+            Int32.TryParse(Data.type.ToString().Replace("Event", ""), out Event);
+            if (value < 2000000000)
+            {
+                port.Write(new byte[] { (byte)3, byte.Parse(Data.type.ToString().Replace("Event", "")), (byte)value, (byte)0 }, 0, 4);
+            }else if (Config.chroma)
+            {
+                Color C = ColourFromInt(value);
+                //Debug.Log((4 + Event) + "    " + (int)(C.r * 255) + "    " + (int)(C.g * 255) + "    " + (int)(C.b * 255));
+                port.Write(new byte[] { (byte)(4 + Event), (byte)(C.r * 255), (byte)(C.g * 255), (byte)(C.b * 255) }, 0, 4);
+
+            }
             //Debug.Log(Data.type.ToString().Replace("Event", "") + "/" + Data.value);
         }
     }

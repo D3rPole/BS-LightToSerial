@@ -32,7 +32,7 @@ namespace LightOut.UI
             enabled.GetValue += delegate { return Config.enabled;  };
             enabled.SetValue += delegate (bool value) { Config.enabled = value; };
 
-            var chroma = pluginSettingsSubmenu.AddBool("Chroma support (not Chromalite)");
+            var chroma = pluginSettingsSubmenu.AddBool("Chroma/lite support");
             chroma.GetValue += delegate { return Config.chroma; };
             chroma.SetValue += delegate (bool value) { Config.chroma = value; };
 

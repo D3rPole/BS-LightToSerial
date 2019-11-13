@@ -7,8 +7,6 @@ using System.Media;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using IllusionPlugin;
-using IPA.Loader;
-
 namespace LightOut
 {
     public class Plugin : IPlugin
@@ -40,22 +38,7 @@ namespace LightOut
 
             if (newScene.name == "GameCore" && Config.enabled)
             {
-                bool chroma = false;
-
-                if (Config.chroma)
-                {
-                    chroma = IPA.Loader.PluginManager.GetPlugin("Chroma") != null;
-                }
-
-                Debug.Log("Chroma: " + chroma);
-
-                if (chroma) {
-                    new GameObject("EventListener").AddComponent<EventListenerChroma>();
-                }
-                else
-                {
-                    new GameObject("EventListener").AddComponent<EventListener>();
-                }
+                new GameObject("EventListener").AddComponent<EventListener>();
             }
 
 

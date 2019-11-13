@@ -219,7 +219,6 @@ C:\Users\DerPole\Source\Repos\D3rPole\BS-Lightoutput\bs_mod\LightOut\bin\Debug\N
 C:\Users\DerPole\Source\Repos\D3rPole\BS-Lightoutput\bs_mod\LightOut\bin\Debug\0Harmony.1.2.0.1.dll
 C:\Users\DerPole\Source\Repos\D3rPole\BS-Lightoutput\bs_mod\LightOut\bin\Debug\Assembly-CSharp.dll
 C:\Users\DerPole\Source\Repos\D3rPole\BS-Lightoutput\bs_mod\LightOut\bin\Debug\BeatSaberCustomUI.dll
-C:\Users\DerPole\Source\Repos\D3rPole\BS-Lightoutput\bs_mod\LightOut\bin\Debug\Chroma.dll
 C:\Users\DerPole\Source\Repos\D3rPole\BS-Lightoutput\bs_mod\LightOut\bin\Debug\UnityEngine.CoreModule.dll
 C:\Users\DerPole\Source\Repos\D3rPole\BS-Lightoutput\bs_mod\LightOut\bin\Debug\UnityEngine.dll
 C:\Users\DerPole\Source\Repos\D3rPole\BS-Lightoutput\bs_mod\LightOut\bin\Debug\UnityEngine.UI.dll
@@ -248,7 +247,6 @@ C:\Users\DerPole\Source\Repos\D3rPole\BS-Lightoutput\bs_mod\LightOut\bin\Debug\U
 C:\Users\DerPole\Source\Repos\D3rPole\BS-Lightoutput\bs_mod\LightOut\bin\Debug\UnityEngine.UnityWebRequestAudioModule.dll
 C:\Users\DerPole\Source\Repos\D3rPole\BS-Lightoutput\bs_mod\LightOut\bin\Debug\UnityEngine.UnityWebRequestTextureModule.dll
 C:\Users\DerPole\Source\Repos\D3rPole\BS-Lightoutput\bs_mod\LightOut\bin\Debug\UnityEngine.IMGUIModule.dll
-C:\Users\DerPole\Source\Repos\D3rPole\BS-Lightoutput\bs_mod\LightOut\bin\Debug\CustomJSONData.dll
 C:\Users\DerPole\Source\Repos\D3rPole\BS-Lightoutput\bs_mod\LightOut\bin\Debug\UnityEngine.SharedInternalsModule.dll
 C:\Users\DerPole\Source\Repos\D3rPole\BS-Lightoutput\bs_mod\LightOut\bin\Debug\UnityEngine.VehiclesModule.dll
 C:\Users\DerPole\Source\Repos\D3rPole\BS-Lightoutput\bs_mod\LightOut\bin\Debug\UnityEngine.ClothModule.dll
@@ -285,3 +283,5 @@ C:\Users\DerPole\Source\Repos\D3rPole\BS-Lightoutput\bs_mod\LightOut\obj\Debug\L
 C:\Users\DerPole\Source\Repos\D3rPole\BS-Lightoutput\bs_mod\LightOut\obj\Debug\LightOut.csproj.CopyComplete
 C:\Users\DerPole\Source\Repos\D3rPole\BS-Lightoutput\bs_mod\LightOut\obj\Debug\NewPlugin.dll
 C:\Users\DerPole\Source\Repos\D3rPole\BS-Lightoutput\bs_mod\LightOut\obj\Debug\NewPlugin.pdb
+C:\Users\DerPole\Source\Repos\D3rPole\BS-Lightoutput\bs_mod\LightOut\bin\Debug\Chroma.dll
+C:\Users\DerPole\Source\Repos\D3rPole\BS-Lightoutput\bs_mod\LightOut\bin\Debug\CustomJSONData.dll

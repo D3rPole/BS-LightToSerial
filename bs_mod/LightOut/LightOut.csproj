@@ -112,7 +112,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EventListenerChroma.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="EventListener.cs" />
     <Compile Include="Plugin.cs" />
